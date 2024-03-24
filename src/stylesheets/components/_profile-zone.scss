@@ -1,0 +1,42 @@
+.profile__btn {
+  all: unset;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: " ";
+  display: inline-block;
+  vertical-align: text-bottom;
+
+  &__user {
+    @extend .profile__btn;
+    background-image: url("../static/img/svg/user.svg");
+  }
+  &__search {
+    @extend .profile__btn;
+    background-image: url("../static/img/svg/search.svg");
+  }
+  &__basket {
+    @extend .profile__btn;
+    position: relative;
+    background-image: url("../static/img/svg/shop\ bag.svg");
+  }
+}
+
+.basket__items {
+  display: none;
+  @include center;
+  align-items: center;
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  
+  height: 13px;
+  width: 13px;
+  border-radius: 6px;
+  background-color: $red;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+}

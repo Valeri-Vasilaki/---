@@ -1,0 +1,48 @@
+  .banner {
+    position: absolute;
+    padding: 20px;
+    @include scale;
+    @include flex-col;
+    @include end;
+    box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+    z-index: 1;
+
+    &__tr {
+      @extend .banner;
+      right: -7%;
+      top: 10%;
+      width: 149px;
+      height: 204px;
+      background: #9e98dc;
+    }
+
+    &__br {
+      @extend .banner;
+      right: 0;
+      top: 500px;
+      width: 137px;
+      height: 273px;
+      background: #ff8fe6;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .arrow {
+    all: unset;
+    content: " ";
+    width: 55px;
+    height: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-image: url("../static/img/svg/arrow.svg");
+  }
+
+@media (max-width: 1120px) {
+  .banner {
+    display: none;
+  }
+}

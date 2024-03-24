@@ -1,0 +1,113 @@
+.books {
+  display: grid;
+  grid-template-areas:
+    "sidebar books"
+    "sidebar button";
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.book-list {
+  grid-area: books;
+  @include grid-2-col;
+  row-gap: 70px;
+  column-gap: 75px;
+  z-index: 1;
+}
+
+.book {
+  @include d-flex;
+  gap: 36px;
+  justify-content: end;
+}
+
+.book__poster {
+  @include flex-col;
+  justify-content: center;
+  box-shadow: 0px 24px 36px rgba(53, 49, 84, 0.28);
+}
+
+.book__details {
+  height: 100%;
+  width: 175px;
+  @include flex-col;
+  gap: 15px;
+  justify-content: center;
+}
+
+.book__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $text-black;
+}
+
+.book__author {
+  @include os-normal;
+  color: $text-gray;
+}
+
+.book__description {
+  @include os-normal;
+  color: $text-gray;
+}
+
+.book__price {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $text-black;
+}
+
+.book__rating {
+  @include d-flex;
+  gap: 10px;
+  &__stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+
+    &::before {
+      content: "★★★★★";
+      letter-spacing: 3px;
+      background: linear-gradient(
+        90deg,
+        $star-color var(--percent),
+        $star-background var(--percent)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__reviews {
+    @include os-normal;
+    text-transform: none;
+  }
+}
+
+.load-more {
+  width: 175px;
+  margin: 30px auto;
+  grid-area: button;
+}
+
+@media (max-width: 1120px) {
+  .book-list {
+    @include flex-col;
+    align-items: center;
+  }
+}
+
+@media (max-width: 750px) {
+  .books {
+    @include flex-col;
+    gap: 40px;
+  }
+
+  .book {
+    @include flex-col;
+    align-items: center;
+  }
+}

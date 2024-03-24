@@ -1,0 +1,20 @@
+@mixin d-flex {
+  display: flex;
+}
+
+@mixin flex-col {
+  @include d-flex;
+  flex-direction: column;
+}
+
+@mixin end {
+  justify-content: flex-end;
+}
+
+@mixin s-btw {
+  justify-content: space-between;
+}
+
+@mixin center {
+  justify-content: center;
+}

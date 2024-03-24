@@ -1,0 +1,49 @@
+.navbar {
+  @include d-flex;
+  @include s-btw;
+  @include container;
+  min-height: 116px;
+  padding: 0 15px;
+  align-items: center;
+  position: sticky;
+  z-index: 2;
+}
+
+.navbar__links {
+  @include d-flex;
+  gap: 40px;
+}
+
+.navbar__link {
+  color: $text-gray;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+
+  &__active {
+    @extend .navbar__link;
+    color: $text-black;
+    font-weight: 900;
+  }
+}
+
+.navbar__logo a {
+  color: $text-black;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.navbar__profile {
+    @include d-flex;
+    @include s-btw;
+    gap: 40px;
+}
+
+@media (max-width: 1120px) {
+  .navbar__links {
+    display: none;
+  }
+}

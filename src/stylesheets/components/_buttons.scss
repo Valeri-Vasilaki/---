@@ -1,0 +1,31 @@
+.btn {
+  height: 45px;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 10px;
+  text-transform: uppercase;
+  background: none;
+  @include scale;
+
+  &__primary {
+    @extend .btn;
+    border-color: $primary;
+    color: $primary;
+  }
+
+  &__primary:disabled {
+    border-color: $disabled;
+    color: $disabled-text;
+    transform: none;
+    cursor: not-allowed;
+  }
+
+  &__secondary {
+    @extend .btn;
+    border-color: $disabled;
+    color: $disabled-text;
+  }
+}
