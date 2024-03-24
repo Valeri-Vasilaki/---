@@ -1,0 +1,48 @@
+{
+  "name": "book_shop",
+  "version": "1.0.0",
+  "description": "Book shop example application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve",
+    "prettier-watch": "onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}",
+    "build:watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thrashches/book_shop_frontend.git"
+  },
+  "keywords": [
+    "book_shop",
+    "shop",
+    "frontend",
+    "ts"
+  ],
+  "author": "thrashches",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thrashches/book_shop_frontend/issues"
+  },
+  "homepage": "https://github.com/thrashches/book_shop_frontend#readme",
+  "dependencies": {
+    "css-loader": "^6.7.3",
+    "gh-pages": "^5.0.0",
+    "node-sass": "^8.0.0",
+    "onchange": "^7.1.0",
+    "prettier": "^2.8.1",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
